@@ -1,0 +1,14 @@
+2.
+C.
+The fst for this is squash.fst. The way it works is that there is a transition from state 0 to 1 for all letters, a space transitions back to 0. Then for all consonants a transition from 1 back to 1. For vowels at state 1, we have to transitions, one to state 3 where the vowel is printed and one to state 3 where nothing is printed. At state 2 if we get a space, we return to the state 0. In state 3, if we get vowel we additionally transition from state 3 to 3 without printing (assuming inside of a word) and we transition to state 2 with printing (assumes end of word). All consonants lead back to state 1.
+
+If we find a vowel, and it does not have a space following it, the path through state 2 fails. If we find a vowel and a space occurs after it, there is no transition with a space from state 3, so that path will fail.
+D.
+
+The fsts for these are resquash1.fst, resquash2.fst, etc.
+
+1- 7/18 words correct
+2- 9/18 words correct
+3- 11/18 words correct
+5- 16/18 words correct 
+7- 17/18 words correct
